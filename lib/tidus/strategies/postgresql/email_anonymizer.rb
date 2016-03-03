@@ -7,8 +7,8 @@ module Tidus
 
         return "CASE WHEN ((#{name})::text ~~ '%@%'::text) " +
                "THEN (((\"left\"(md5((#{name})::text), #{options[:length]}) || '@'::text) " +
-                "|| split_part((#{name})::text, '@'::text, 2)))::character varying " +
-                "ELSE #{name} END"
+               "|| split_part((#{name})::text, '@'::text, 2)))::character varying " +
+               "ELSE (\"left\"(md5((#{name})::text), #{options[:length]}) || '@mail.de'::text) END"
       end
     end
   end

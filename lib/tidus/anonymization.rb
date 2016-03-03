@@ -68,7 +68,6 @@ module Tidus
         @view_columns[column.to_sym] = klass.anonymize(table_name, column, options)
       end
     end
-
 	end
 end
 
